@@ -1,0 +1,138 @@
+/* 레이아웃 전용 CSS: 헤더, 본문 폭, 푸터 및 반응형 정렬 */
+.site-header {
+  width: 100%;
+}
+.site-footer {
+  width: 100%;
+  padding: 48px clamp(24px, 6vw, 88px) 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  background: #171717;
+  color: #fff;
+}
+.footer-brand {
+  flex: 0 0 34%;
+}
+.site-footer .brand-name {
+  color: #fff;
+}
+.footer-tagline {
+  margin: 16px 0 0;
+  color: #aaa;
+  font-size: 13px;
+}
+.footer-info {
+  flex: 1;
+  max-width: 620px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  column-gap: 28px;
+  row-gap: 8px;
+}
+.footer-info p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+}
+.footer-info p strong {
+  color: #ff777c;
+  font-size: 11px;
+}
+.footer-info p span,
+.footer-info p a {
+  color: #e5e5e5;
+}
+.footer-info small {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #393939;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    padding: 12px 20px 16px;
+  }
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+  }
+  .brand-name {
+    font-size: 14px;
+  }
+  .main-nav {
+    width: 100%;
+    gap: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .main-nav a {
+    font-size: 12px;
+  }
+  .main-nav .nav-cta {
+    padding: 7px 10px;
+  }
+  .hero-video {
+    height: 620px;
+    min-height: 560px;
+    max-height: none;
+  }
+  .hero-media iframe {
+    min-width: 220vh;
+  }
+  .hero-copy {
+    padding: 55px 24px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(36px, 9vw, 54px);
+  }
+  .hero-copy > p:not(.eyebrow) {
+    max-width: 330px;
+    font-size: 14px;
+  }
+  .mentor {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .mentor-photo {
+    min-height: 340px;
+  }
+  .mentor-photo img {
+    height: 400px;
+  }
+  .home-links {
+    grid-template-columns: 1fr;
+    padding-bottom: 70px;
+  }
+  .home-links a {
+    min-height: 145px;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 38px 24px 24px;
+  }
+  .footer-brand {
+    flex-basis: auto;
+  }
+  .footer-info {
+    width: 100%;
+    grid-template-columns: 1fr;
+    row-gap: 13px;
+  }
+  .footer-info small {
+    margin-top: 8px;
+  }
+}

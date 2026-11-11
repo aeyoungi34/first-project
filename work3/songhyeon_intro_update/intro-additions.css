@@ -1,0 +1,197 @@
+
+/* =========================================================
+   INTRO 페이지 추가 스타일
+   기존 style.css 맨 아래에 이 코드를 붙여 넣으세요.
+   색상은 기존 사이트 변수(--red, --black, --muted, --line)를 사용합니다.
+   ========================================================= */
+
+/* 소개 페이지 상단 */
+.intro-page .page-intro {
+  padding: 88px 24px 76px;
+  text-align: center;
+  background: #fafafa;
+  border-bottom: 1px solid var(--line);
+}
+.intro-page .page-intro h1 {
+  margin: 0;
+  font-size: clamp(30px, 4.2vw, 48px);
+  line-height: 1.35;
+  letter-spacing: -1.8px;
+}
+.intro-page .page-intro h1 em,
+.intro-page .section-heading h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+.intro-page .page-intro > p:last-child {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* 공통 섹션 */
+.intro-page .section-block { padding-top: 86px; padding-bottom: 86px; }
+.intro-page .section-heading { margin-bottom: 32px; }
+.intro-page .section-heading h2 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.35;
+  letter-spacing: -1.2px;
+}
+.intro-page .section-heading > p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 강사진 카드 */
+.intro-page .profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.intro-page .profile-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.045);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.intro-page .profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.09);
+}
+.intro-page .profile-photo,
+.intro-page .program-photo,
+.intro-page .facility-photo {
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.intro-page .profile-photo { height: 290px; }
+.intro-page .profile-photo img,
+.intro-page .program-photo img,
+.intro-page .facility-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+.intro-page .profile-card:hover img,
+.intro-page .program-card:hover img,
+.intro-page .facility-card:hover img { transform: scale(1.04); }
+.intro-page .profile-info { padding: 20px 21px 22px; }
+.intro-page .profile-role {
+  margin: 0 0 10px;
+  color: var(--black);
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+.intro-page .profile-specialty {
+  margin: 0 0 13px;
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 800;
+}
+.intro-page .profile-motto {
+  min-height: 48px;
+  margin: 0;
+  padding-top: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* 운동 프로그램 */
+.intro-page .soft-section { background: #f8f8f8; }
+.intro-page .program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.intro-page .program-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.045);
+}
+.intro-page .program-photo { height: 300px; }
+.intro-page .program-info { padding: 24px 26px 28px; }
+.intro-page .program-label {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+}
+.intro-page .program-info h3 {
+  margin: 7px 0 10px;
+  font-size: 25px;
+  letter-spacing: -.8px;
+}
+.intro-page .program-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 시설 카드 */
+.intro-page .facility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.intro-page .facility-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 44% 1fr;
+  min-height: 205px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+.intro-page .facility-photo { min-height: 205px; }
+.intro-page .facility-info {
+  align-self: center;
+  padding: 20px;
+}
+.intro-page .facility-info h3 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -.7px;
+}
+.intro-page .facility-subtitle {
+  margin: 4px 0 10px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+}
+.intro-page .facility-info > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* 둥근 모서리 공통 및 반응형 */
+.intro-page img { max-width: 100%; }
+@media (max-width: 900px) {
+  .intro-page .profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .intro-page .facility-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .intro-page .page-intro { padding: 62px 20px 55px; }
+  .intro-page .section-block { padding-top: 62px; padding-bottom: 62px; }
+  .intro-page .profile-grid,
+  .intro-page .program-grid { grid-template-columns: 1fr; }
+  .intro-page .profile-photo { height: 330px; }
+  .intro-page .program-photo { height: 235px; }
+  .intro-page .facility-card { grid-template-columns: 1fr; }
+  .intro-page .facility-photo { height: 210px; }
+  .intro-page .facility-info { padding: 18px 20px 22px; }
+}

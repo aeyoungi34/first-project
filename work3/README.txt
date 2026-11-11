@@ -1,0 +1,13 @@
+대구청년건강증진서비스 송현점 홈페이지
+- index.html을 열어 실행합니다.
+- HTML 5개 파일과 style.css는 같은 폴더에 둡니다.
+- 홈 전체 영상 파일명: group-pt.mp4 (index.html의 video source)
+- 영상 포스터: group-pt-poster.jpg
+- 멘토 사진: mentor.jpg
+- 강사 사진: trainer-pt-01.jpg, trainer-pt-02.jpg, trainer-pt-03.jpg, trainer-pilates-01.jpg, trainer-pilates-02.jpg
+- 시설 사진: energy-fit-zone.jpg, active-zone.jpg, pilates-room.jpg, hall.jpg
+- 활동 사진: activity-01.jpg ~ activity-04.jpg
+- 이미지·영상은 실제 파일을 같은 폴더에 넣거나 HTML의 파일 경로를 변경하세요.
+- 주소, 전화번호, 멘토·강사 이름, 상담 이메일(contact@example.com)은 실제 정보로 수정해야 합니다.
+- 참여자 후기와 사진은 본인 동의를 받은 실제 자료로 교체해 주세요.
+- JavaScript 없이 HTML과 CSS만 사용했습니다. 상담 메일 링크는 메일 프로그램을 여는 기능이며, 온라인 접수는 별도 폼/서버 연결이 필요합니다.

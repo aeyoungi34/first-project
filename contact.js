@@ -1,7 +1,10 @@
+// ===================================
 // EmailJS 설정
-const SERVICE_ID = "여기에_Service_ID";
-const TEMPLATE_ID = "여기에_Template_ID";
-const PUBLIC_KEY = "여기에_Public_Key";
+// ===================================
+
+const SERVICE_ID = "service1";
+const TEMPLATE_ID = "songhyeon1";
+const PUBLIC_KEY = "62T5FAFbXtEhr5d2W";
 
 // EmailJS 초기화
 emailjs.init({
@@ -11,29 +14,37 @@ emailjs.init({
 // 상담 신청 폼
 const contactForm = document.getElementById("contact-form");
 
-contactForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  const submitBtn = document.getElementById("submit-btn");
-  const result = document.getElementById("form-result");
+    const submitBtn = document.getElementById("submit-btn");
+    const result = document.getElementById("form-result");
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = "전송 중...";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "전송 중...";
 
-  try {
-    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, contactForm);
+    try {
+      const response = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        contactForm,
+      );
 
-    result.textContent = "상담 신청이 정상적으로 접수되었습니다.";
-    result.style.color = "green";
+      console.log("전송 성공:", response);
 
-    contactForm.reset();
-  } catch (error) {
-    console.error("EmailJS 오류:", error);
+      result.textContent = "상담 신청이 정상적으로 접수되었습니다.";
+      result.style.color = "green";
 
-    result.textContent = "전송에 실패했습니다. 다시 시도해 주세요.";
-    result.style.color = "red";
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = "상담 신청하기";
-  }
-});
+      contactForm.reset();
+    } catch (error) {
+      console.error("EmailJS 오류:", error);
+
+      result.textContent = "전송 실패: " + (error.text || error.message);
+      result.style.color = "red";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "상담 신청하기";
+    }
+  });
+}

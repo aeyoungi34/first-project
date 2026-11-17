@@ -81,3 +81,110 @@
   showSlide(0);
   startTimer();
 })();
+
+(() => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) return;
+
+  const main = document.querySelector("main");
+  if (!main) return;
+
+  const sectionByEyebrow = (label) =>
+    Array.from(main.querySelectorAll(".section")).find((section) => {
+      const eyebrow = section.querySelector(".eyebrow");
+      return eyebrow && eyebrow.textContent.trim() === label;
+    });
+
+  const revealTargets = [];
+  const addTargets = (elements, className, stagger = 0) => {
+    elements.forEach((element, index) => {
+      element.classList.add("scroll-reveal", className);
+      if (stagger) {
+        element.style.setProperty("--reveal-delay", `${index * stagger}s`);
+      }
+      revealTargets.push(element);
+    });
+  };
+
+  const whySection = sectionByEyebrow("WHY GROUP PT");
+  if (whySection) {
+    const copy = whySection.querySelector(".split > div:first-child");
+    const photo = whySection.querySelector(".hero-photo-stack");
+    if (copy) {
+      addTargets(
+        Array.from(copy.querySelectorAll(".eyebrow, h2, p, .check-list")),
+        "scroll-reveal--up",
+        0.18,
+      );
+    }
+    if (photo) addTargets([photo], "scroll-reveal--image");
+  }
+
+  const programSection = sectionByEyebrow("OUR PROGRAM");
+  if (programSection) {
+    const heading = programSection.querySelector(".section-heading");
+    const cards = Array.from(programSection.querySelectorAll(".program-card"));
+    if (heading) {
+      addTargets(
+        Array.from(heading.querySelectorAll(".eyebrow, h2, p")),
+        "scroll-reveal--up",
+        0.18,
+      );
+    }
+    addTargets(cards, "scroll-reveal--up", 0.2);
+  }
+
+  const firstStepSection = sectionByEyebrow("YOUR FIRST STEP");
+  if (firstStepSection) {
+    const copy = firstStepSection.querySelector(".split > div:first-child");
+    const stats = Array.from(firstStepSection.querySelectorAll(".stats > div"));
+    if (copy) {
+      addTargets(
+        Array.from(copy.querySelectorAll(".eyebrow, h2, p, .btn")),
+        "scroll-reveal--up",
+        0.18,
+      );
+    }
+    addTargets(stats, "scroll-reveal--right", 0.2);
+  }
+
+  const cta = main.querySelector(".cta-band");
+  if (cta) {
+    const content = cta.querySelector(".inner");
+    if (content) {
+      addTargets(
+        Array.from(content.querySelectorAll("h2, p, .btn")),
+        "scroll-reveal--up",
+        0.2,
+      );
+    }
+  }
+
+  if (!revealTargets.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.addEventListener("transitionend", (event) => {
+          if (event.propertyName === "opacity") {
+            entry.target.style.removeProperty("--reveal-delay");
+          }
+        });
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.01, rootMargin: "0px 0px -8% 0px" },
+  );
+  revealTargets.forEach((target) => observer.observe(target));
+
+  reducedMotion.addEventListener("change", (event) => {
+    if (!event.matches) return;
+    revealTargets.forEach((target) => {
+      target.style.removeProperty("--reveal-delay");
+      target.classList.add("is-visible");
+      observer.unobserve(target);
+    });
+  });
+})();

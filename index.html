@@ -20,12 +20,12 @@
             class="home-carousel__slide is-active"
             role="group"
             aria-roledescription="슬라이드"
-            aria-label="1 / 5"
+            aria-label="1 / 6"
             aria-hidden="false"
           >
             <img
-              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
-              alt="다양한 운동 기구를 갖춘 피트니스 공간"
+              src="1.jpg"
+              alt="여성이 바벨들고 백스쾃하는자세 "
               fetchpriority="high"
             />
           </div>
@@ -33,12 +33,12 @@
             class="home-carousel__slide"
             role="group"
             aria-roledescription="슬라이드"
-            aria-label="2 / 5"
+            aria-label="2 / 6"
             aria-hidden="true"
           >
             <img
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
-              alt="웨이트 트레이닝을 하는 운동인"
+              src="2.jpg"
+              alt="트레이너에게 케트벨 스윙 지도받고 있는 여성"
               loading="lazy"
             />
           </div>
@@ -46,12 +46,12 @@
             class="home-carousel__slide"
             role="group"
             aria-roledescription="슬라이드"
-            aria-label="3 / 5"
+            aria-label="3 / 6"
             aria-hidden="true"
           >
             <img
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
-              alt="강사의 지도를 받으며 운동하는 회원"
+              src="3.jpg"
+              alt="덤벨을 들고 있는 여성들"
               loading="lazy"
             />
           </div>
@@ -59,12 +59,12 @@
             class="home-carousel__slide"
             role="group"
             aria-roledescription="슬라이드"
-            aria-label="4 / 5"
+            aria-label="4 / 6"
             aria-hidden="true"
           >
             <img
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
-              alt="매트에서 스트레칭과 필라테스를 하는 모습"
+              src="4.jpg"
+              alt="무게가 높은 덤벨을 들고 근력운동하는 남성"
               loading="lazy"
             />
           </div>
@@ -72,16 +72,29 @@
             class="home-carousel__slide"
             role="group"
             aria-roledescription="슬라이드"
-            aria-label="5 / 5"
+            aria-label="5 / 6"
             aria-hidden="true"
           >
             <img
-              src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
-              alt="함께 근력 운동을 하는 그룹 트레이닝"
+              src="5.jpg"
+              alt="남성과 여성이 케트벨로 코어운동하고 있음"
               loading="lazy"
             />
           </div>
-        </div>
+          <div
+            class="home-carousel__slide"
+             role="group"
+            aria-roledescription="슬라이드"
+            aria-label="6 / 6"
+            aria-hidden="true"
+          >
+            <img
+              src="6.jpg"
+              alt="남성과 여성이 케트벨로 코어운동하고 있음"
+              loading="lazy"
+            />
+              </div>
+          </div>
         <div class="home-carousel__shade" aria-hidden="true"></div>
         <div class="home-carousel__content container">
           <p class="eyebrow">MOVE TOGETHER · GROW TOGETHER</p>
@@ -258,6 +271,45 @@
         </div>
       </div>
     </footer>
+    <!-- 공지사항 팝업 -->
+<div class="notice-popup" id="noticePopup">
+  <div class="notice-popup__content">
+    <button class="notice-popup__close" id="noticeClose">×</button>
+
+    <p class="notice-popup__label">NOTICE</p>
+    <h2>★ 자부담 안내</h2>
+
+    <div class="notice-popup__text">
+      <p>
+        자부담금은 매 월 기준으로 발생하며,<br />
+        선입금을 원칙으로 <strong>11월 말까지 꼭 계좌입금 또는 헌금납부</strong>
+        해주세요.
+      </p>
+
+      <p>
+        이용 못하신 서비스에 대해서는 계약종료 후 환불처리 됩니다
+        (노쇼 제외).
+      </p>
+
+      <hr />
+
+      <h3>▶ 일상돌봄 신체건강</h3>
+      <p class="account">
+        IM뱅크 505-10-14363-3<br />
+        (월성종합사회복지관)
+      </p>
+
+      <p class="notice-warning">
+        * 계좌번호 반드시 구분해주세요 *
+      </p>
+    </div>
+
+    <button class="notice-popup__confirm" id="noticeConfirm">
+      확인했습니다
+    </button>
+  </div>
+</div>
     <script src="home.js"></script>
+  <script src="notice.js"></script>
   </body>
 </html>
